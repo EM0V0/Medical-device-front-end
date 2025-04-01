@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0% { filter: drop-shadow(0 0 0.25rem rgba(59, 130, 246, 0.2)); }
+  50% { filter: drop-shadow(0 0 0.5rem rgba(59, 130, 246, 0.5)); }
+  100% { filter: drop-shadow(0 0 0.25rem rgba(59, 130, 246, 0.2)); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes grow-fade {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+/* Custom Animation Classes */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 3s infinite ease-in-out;
+  }
+  
+  .animate-float {
+    animation: float 6s infinite ease-in-out;
+  }
+  
+  .animate-grow-fade {
+    animation: grow-fade 4s infinite ease-in-out;
+  }
+}
+
+/* Custom Neural Connection Animation */
+.neural-connection {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: dash 3s linear forwards infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Enhance Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #93c5fd;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium px-4 py-2 rounded-md 
+    shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
+    transition-all duration-300 transform hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply bg-white text-blue-500 font-medium px-4 py-2 rounded-md border border-blue-200
+    shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
+    transition-all duration-300 hover:border-blue-500;
+}
+
+/* 玻璃态卡片效果 */
+.glass-card {
+  @apply bg-white bg-opacity-80 backdrop-filter backdrop-blur-md rounded-xl 
+    border border-white border-opacity-30 shadow-xl;
+}
+
+/* 输入框悬停效果 */
+.input-hover-effect:hover {
+  @apply border-blue-300 shadow-sm;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  body {
+    @apply bg-secondary-50 text-secondary-800 antialiased min-h-screen;
+    font-family: 'Inter', Arial, sans-serif;
+  }
+
+  /* Ensure all elements use the box-sizing: border-box model */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+  
+  /* Make sure images are responsive by default */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Basic heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 border border-transparent 
+      text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 
+      focus:ring-offset-2 transition-colors duration-150;
+  }
+
+  .btn-danger {
+    @apply bg-danger-500 hover:bg-danger-600 text-white focus:ring-danger-500;
+  }
+
+  .form-input {
+    @apply block w-full px-3 py-2 border border-secondary-300 rounded-md shadow-sm 
+      placeholder-secondary-400 focus:outline-none focus:ring-primary-500 
+      focus:border-primary-500 sm:text-sm;
+  }
+
+  .form-select {
+    @apply block w-full px-3 py-2 border border-secondary-300 rounded-md shadow-sm 
+      bg-white focus:outline-none focus:ring-primary-500 focus:border-primary-500 
+      sm:text-sm;
+  }
+
+  .form-checkbox {
+    @apply h-4 w-4 text-primary-600 focus:ring-primary-500 border-secondary-300 
+      rounded;
+  }
+
+  .card {
+    @apply bg-white shadow rounded-lg p-4 sm:p-6;
+  }
+  
+  /* Status indicators */
+  .status-dot {
+    @apply inline-block w-3 h-3 rounded-full;
+  }
+  
+  .status-critical {
+    @apply bg-red-500;
+  }
+  
+  .status-moderate {
+    @apply bg-orange-400;
+  }
+  
+  .status-stable {
+    @apply bg-green-500;
+  }
+  
+  /* Dashboard specific components */
+  .dashboard-card {
+    @apply bg-white shadow rounded-lg p-4 sm:p-6 border border-gray-200;
+  }
+  
+  .dashboard-stat {
+    @apply flex flex-col p-4 bg-white rounded-lg shadow;
+  }
+  
+  .dashboard-chart {
+    @apply bg-white p-4 rounded-lg shadow border border-gray-200;
+  }
+  
+  /* Avatar placeholder */
+  .avatar-placeholder {
+    @apply bg-gray-300 rounded-full flex items-center justify-center text-white font-bold;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Responsive utilities */
+  .responsive-container {
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  /* Grid utility classes */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+} 

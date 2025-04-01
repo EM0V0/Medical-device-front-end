@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Styles -->
+  <style>
+    .boundary-box { 
+      fill: white; 
+      stroke-dasharray: 5,5; 
+      stroke-width: 2; 
+    }
+    .t1-color { stroke: #9966CC; }
+    .t2-color { stroke: #66CC99; }
+    .t3-color { stroke: #6699CC; }
+    .t4-color { stroke: #333333; }
+    
+    .asset-box { 
+      stroke-width: 2; 
+      fill: white;
+    }
+    .a1-bg { fill: #F2E6FF; stroke: #9966CC; }
+    .a2-bg { fill: #E6F9F1; stroke: #66CC99; }
+    .a3-bg { fill: #E6F9F1; stroke: #66CC99; }
+    .a4-bg { fill: #E6F0F9; stroke: #6699CC; }
+    .a5-bg { fill: #E6F9F1; stroke: #66CC99; }
+    
+    .label { 
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+    }
+    .title { 
+      font-family: Arial, sans-serif; 
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .protocol {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+    .legend-box {
+      fill: white;
+      stroke: #333333;
+      stroke-width: 1;
+    }
+    .legend-title {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .arrow {
+      stroke: #333333;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+    .dashed-arrow {
+      stroke: #333333;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+      stroke-dasharray: 5,5;
+    }
+    /* 添加多行文本类样式 */
+    .multiline-label {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+  </style>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333333" />
+    </marker>
+  </defs>
+  
+  <!-- T4: External/Internet boundary -->
+  <rect x="50" y="50" width="820" height="320" class="boundary-box t4-color" />
+  <text x="60" y="75" class="title">T4: External / Internet</text>
+  
+  <!-- T2: AWS Cloud Platform (Hosting) boundary -->
+  <rect x="70" y="90" width="780" height="250" class="boundary-box t2-color" />
+  <text x="80" y="115" class="title">T2: AWS Cloud Platform (Hosting)</text>
+  <text x="80" y="135" class="label">(Storage &amp; Basic Infrastructure)</text>
+  
+  <!-- A2: AWS Storage -->
+  <rect x="100" y="150" width="200" height="80" class="asset-box a2-bg" />
+  <text x="120" y="175" class="title">A2: AWS S3/Storage</text>
+  <text x="120" y="195" class="label">(Raw Data &amp; Backups)</text>
+  <text x="120" y="215" class="label">• Protocol F3: HTTPS</text>
+  
+  <!-- A5: AWS Lambda -->
+  <rect x="350" y="150" width="200" height="80" class="asset-box a5-bg" />
+  <text x="370" y="175" class="title">A5: AWS Lambda</text>
+  <text x="370" y="195" class="label">(Serverless Functions)</text>
+  <text x="370" y="215" class="label">• Protocol F7: API Gateway</text>
+  
+  <!-- A3: Database -->
+  <rect x="600" y="150" width="220" height="80" class="asset-box a3-bg" />
+  <text x="620" y="175" class="title">A3: Database</text>
+  <text x="620" y="195" class="label">(Amazon RDS / DynamoDB)</text>
+  <text x="620" y="215" class="label">• Protocol F4: TDS / SQL over TLS</text>
+  
+  <!-- T3: Admin/Doctor Workstation boundary -->
+  <rect x="300" y="400" width="570" height="350" class="boundary-box t3-color" />
+  <text x="320" y="425" class="title">T3: Admin / Doctor Workstation (In Hospital)</text>
+  <text x="320" y="445" class="label">(Core Processing &amp; Analysis)</text>
+  
+  <!-- A4: .NET Application -->
+  <rect x="370" y="470" width="440" height="230" class="asset-box a4-bg" />
+  <text x="390" y="495" class="title">A4: .NET Application / Windows App</text>
+  <text x="390" y="515" class="label">(Core Data Processing &amp; Analysis)</text>
+  <text x="390" y="535" class="label">• Real-time data processing</text>
+  <text x="390" y="555" class="label">• Tremor analysis algorithms</text>
+  <text x="390" y="575" class="label">• Alert generation &amp; threshold monitoring</text>
+  <text x="390" y="595" class="label">• Historical data visualization</text>
+  <text x="390" y="615" class="label">• Protocol F5: Local processing</text>
+  <text x="390" y="635" class="label">• Protocol F6: HTTPS to AWS</text>
+  <text x="400" y="655" class="label">(Authentication &amp; Storage)</text>
+  
+  <!-- T1: On-Patient Device boundary -->
+  <rect x="50" y="400" width="220" height="230" class="boundary-box t1-color" />
+  <text x="60" y="425" class="title">T1: On-Patient Device</text>
+  <text x="60" y="445" class="label">(In-scope Asset)</text>
+  
+  <!-- A1: Parkinson's Monitoring Glove -->
+  <rect x="70" y="470" width="180" height="140" class="asset-box a1-bg" />
+  <text x="80" y="495" class="title">A1: Parkinson's Monitoring Glove</text>
+  <text x="80" y="515" class="label">• Sensors (Accelerometer, etc.)</text>
+  <text x="80" y="535" class="label">• Protocol F1: Wi-Fi (WPA2)</text>
+  <text x="80" y="555" class="label">• Protocol F2: MQTT</text>
+  
+  <!-- Connection arrows - optimized paths -->
+  <!-- A1 to A4 (Windows App) connection -->
+  <path d="M 250 520 L 370 520" class="arrow" />
+  <text x="285" y="510" class="protocol">F2: MQTT</text>
+  
+  <!-- A4 to A5 (Lambda) connection -->
+  <path d="M 590 470 L 590 400 L 450 400 L 450 230" class="arrow" />
+  <text x="470" y="380" class="protocol">F6: HTTPS (API Call)</text>
+  
+  <!-- A5 (Lambda) to A2 (Storage) connection -->
+  <path d="M 350 190 L 300 190" class="arrow" />
+  <text x="310" y="175" class="protocol">S3 API</text>
+  
+  <!-- A5 (Lambda) to A3 (Database) connections -->
+  <path d="M 550 165 L 600 165" class="arrow" />
+  <path d="M 600 195 L 550 195" class="arrow" />
+  <text x="555" y="150" class="protocol">Database Connection</text>
+  
+  <!-- A4 to A3 (Database) indirect connection -->
+  <path d="M 550 485 L 710 485 L 710 230" class="dashed-arrow" />
+  <text x="570" y="470" class="protocol">F4: SQL/TDS (via Lambda)</text>
+  
+  <!-- Legend -->
+  <rect x="900" y="50" width="280" height="580" class="legend-box" />
+  <text x="920" y="80" class="legend-title">Diagram Legend</text>
+  
+  <!-- Trust Boundary legend -->
+  <rect x="920" y="100" width="180" height="50" class="boundary-box t4-color" />
+  <text x="950" y="130" class="label">Trust Boundary</text>
+  
+  <!-- Asset legend -->
+  <rect x="920" y="170" width="60" height="40" class="asset-box a1-bg" />
+  <text x="990" y="195" class="label">In-scope Asset (T1)</text>
+  
+  <rect x="920" y="220" width="60" height="40" class="asset-box a2-bg" />
+  <text x="990" y="245" class="label">In-scope Asset (T2)</text>
+  
+  <rect x="920" y="270" width="60" height="40" class="asset-box a4-bg" />
+  <text x="990" y="295" class="label">In-scope Asset (T3)</text>
+  
+  <!-- Protocol legend -->
+  <line x1="920" y1="340" x2="970" y2="340" class="arrow" />
+  <text x="990" y="345" class="label">Protocol (F#)</text>
+  
+  <!-- Dashed arrow legend -->
+  <line x1="920" y1="370" x2="970" y2="370" class="dashed-arrow" />
+  <text x="990" y="375" class="label">Indirect Connection</text>
+  
+  <!-- Notes -->
+  <text x="920" y="410" class="label">* Trust Boundaries (T#) represent different</text>
+  <text x="920" y="430" class="label">  security zones with distinct access controls</text>
+  <text x="920" y="470" class="label">** All communications between Trust</text>
+  <text x="920" y="490" class="label">   Boundaries use encrypted protocols</text>
+  
+  <!-- Architecture Description -->
+  <text x="900" y="520" class="title">Architecture Benefits:</text>
+  <text x="900" y="545" class="label">• Windows App is the processing core</text>
+  <text x="900" y="565" class="label">• AWS Lambda handles cloud data operations</text>
+  <text x="900" y="585" class="label">• Reduced dependency on cloud services</text>
+  <text x="900" y="605" class="label">• AWS used primarily for data storage</text>
+  <text x="900" y="625" class="label">• More direct control over processing logic</text>
+  <text x="900" y="645" class="label">• Better suited for offline operations</text>
+  <text x="900" y="665" class="label">• Potentially lower cloud service costs</text>
+</svg>

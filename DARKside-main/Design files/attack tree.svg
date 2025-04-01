@@ -1,0 +1,377 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <!-- Styles -->
+  <style>
+    .root-node {
+      fill: #f0f0f0;
+      stroke: #333333;
+      stroke-width: 2;
+    }
+    .attack-node {
+      fill: #D5E6F2;
+      stroke: #6699CC;
+      stroke-width: 2;
+    }
+    .method-node {
+      fill: #E6D5F2;
+      stroke: #9966CC;
+      stroke-width: 2;
+      rx: 15;
+      ry: 15;
+    }
+    .and-gate {
+      fill: #F2E6D5;
+      stroke: #CC9966;
+      stroke-width: 2;
+    }
+    .or-gate {
+      fill: #D5F2E6;
+      stroke: #66CC99;
+      stroke-width: 2;
+    }
+    .text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      text-anchor: middle;
+    }
+    .bold-text {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .title-text {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .small-text {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-anchor: middle;
+    }
+    .connector {
+      stroke: #666666;
+      stroke-width: 2;
+      fill: none;
+    }
+    .legend-box {
+      fill: white;
+      stroke: #333333;
+      stroke-width: 1;
+    }
+  </style>
+
+  <!-- Root Goal -->
+  <rect x="500" y="20" width="300" height="60" class="root-node" />
+  <text x="650" y="45" class="title-text">Attack Goal:</text>
+  <text x="650" y="65" class="bold-text">Influence or Corrupt Parkinson's Monitoring System</text>
+
+  <!-- Tree Branches -->
+  <!-- Main branches connection lines -->
+  <path d="M 650 80 L 650 110" class="connector" />
+  <path d="M 650 110 L 200 110 L 200 140" class="connector" />
+  <path d="M 650 110 L 450 110 L 450 140" class="connector" />
+  <path d="M 650 110 L 650 140" class="connector" />
+  <path d="M 650 110 L 850 110 L 850 140" class="connector" />
+
+  <!-- Branch 1: Modify Patient Data -->
+  <rect x="50" y="140" width="300" height="50" class="attack-node" />
+  <text x="200" y="160" class="bold-text">1. Modify Patient Data in Real-Time</text>
+  <text x="200" y="180" class="small-text">Manipulate tremor data or falsify readings</text>
+
+  <!-- Branch 1 OR gate -->
+  <rect x="170" y="210" width="60" height="30" class="or-gate" />
+  <text x="200" y="230" class="bold-text">OR</text>
+
+  <!-- Branch 1 connections -->
+  <path d="M 200 190 L 200 210" class="connector" />
+  <path d="M 200 240 L 200 260" class="connector" />
+  <path d="M 200 240 L 100 240 L 100 320" class="connector" />
+  <path d="M 200 240 L 300 240 L 300 320" class="connector" />
+
+  <!-- Branch 1.1: Compromise Firmware -->
+  <rect x="50" y="260" width="300" height="40" class="attack-node" />
+  <text x="200" y="285" class="text">1.1 Compromise Glove Firmware/Software</text>
+
+  <!-- Branch 1.1 AND gate -->
+  <rect x="170" y="320" width="60" height="30" class="and-gate" />
+  <text x="200" y="340" class="bold-text">AND</text>
+
+  <!-- Branch 1.1 connections -->
+  <path d="M 200 300 L 200 320" class="connector" />
+  <path d="M 200 350 L 200 370" class="connector" />
+  <path d="M 200 350 L 100 350 L 100 390" class="connector" />
+  <path d="M 200 350 L 300 350 L 300 390" class="connector" />
+
+  <!-- Branch 1.1 methods -->
+  <rect x="50" y="370" width="100" height="80" rx="15" ry="15" class="method-node" />
+  <text x="100" y="400" class="small-text">Exploit</text>
+  <text x="100" y="420" class="small-text">Software</text>
+  <text x="100" y="440" class="small-text">Vulnerabilities</text>
+
+  <rect x="150" y="370" width="100" height="80" rx="15" ry="15" class="method-node" />
+  <text x="200" y="400" class="small-text">Brute Force</text>
+  <text x="200" y="420" class="small-text">Admin/SSH</text>
+  <text x="200" y="440" class="small-text">Credentials</text>
+
+  <rect x="250" y="370" width="100" height="80" rx="15" ry="15" class="method-node" />
+  <text x="300" y="400" class="small-text">Physical</text>
+  <text x="300" y="420" class="small-text">Access</text>
+  <text x="300" y="440" class="small-text">to Device</text>
+
+  <!-- Branch 1.2: Network Manipulation -->
+  <rect x="0" y="320" width="200" height="40" class="attack-node" />
+  <text x="100" y="345" class="text">1.2 Network Manipulation</text>
+
+  <!-- Branch 1.2 OR gate -->
+  <rect x="70" y="380" width="60" height="30" class="or-gate" />
+  <text x="100" y="400" class="bold-text">OR</text>
+
+  <!-- Branch 1.2 connections -->
+  <path d="M 100 360 L 100 380" class="connector" />
+  <path d="M 100 410 L 30 410 L 30 430" class="connector" />
+  <path d="M 100 410 L 100 430" class="connector" />
+  <path d="M 100 410 L 170 410 L 170 430" class="connector" />
+
+  <!-- Branch 1.2 methods -->
+  <rect x="-20" y="430" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="30" y="460" class="small-text">Protocol</text>
+  <text x="30" y="480" class="small-text">Downgrade</text>
+
+  <rect x="50" y="430" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="100" y="460" class="small-text">ARP/DNS</text>
+  <text x="100" y="480" class="small-text">Spoofing</text>
+
+  <rect x="120" y="430" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="170" y="460" class="small-text">Data</text>
+  <text x="170" y="480" class="small-text">Injection</text>
+
+  <!-- Branch 2: Denial of Service -->
+  <rect x="300" y="140" width="300" height="50" class="attack-node" />
+  <text x="450" y="160" class="bold-text">2. Denial of Service (DoS)</text>
+  <text x="450" y="180" class="small-text">Disrupt monitoring or block data transmission</text>
+
+  <!-- Branch 2 OR gate -->
+  <rect x="420" y="210" width="60" height="30" class="or-gate" />
+  <text x="450" y="230" class="bold-text">OR</text>
+
+  <!-- Branch 2 connections -->
+  <path d="M 450 190 L 450 210" class="connector" />
+  <path d="M 450 240 L 370 240 L 370 280" class="connector" />
+  <path d="M 450 240 L 530 240 L 530 280" class="connector" />
+
+  <!-- Branch 2.1: Network DoS -->
+  <rect x="320" y="280" width="100" height="60" class="attack-node" />
+  <text x="370" y="305" class="text">2.1 Network</text>
+  <text x="370" y="325" class="text">Access DoS</text>
+
+  <!-- Branch 2.1 OR gate -->
+  <rect x="340" y="360" width="60" height="30" class="or-gate" />
+  <text x="370" y="380" class="bold-text">OR</text>
+
+  <!-- Branch 2.1 connections -->
+  <path d="M 370 340 L 370 360" class="connector" />
+  <path d="M 370 390 L 320 390 L 320 410" class="connector" />
+  <path d="M 370 390 L 370 410" class="connector" />
+  <path d="M 370 390 L 420 390 L 420 410" class="connector" />
+
+  <!-- Branch 2.1 methods -->
+  <rect x="270" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="320" y="440" class="small-text">DDoS /</text>
+  <text x="320" y="460" class="small-text">Flooding</text>
+
+  <rect x="320" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="370" y="440" class="small-text">Resource</text>
+  <text x="370" y="460" class="small-text">Exhaustion</text>
+
+  <rect x="370" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="420" y="440" class="small-text">Protocol</text>
+  <text x="420" y="460" class="small-text">Exploits</text>
+
+  <!-- Branch 2.2: Physical DoS -->
+  <rect x="480" y="280" width="100" height="60" class="attack-node" />
+  <text x="530" y="305" class="text">2.2 Physical</text>
+  <text x="530" y="325" class="text">Access DoS</text>
+
+  <!-- Branch 2.2 OR gate -->
+  <rect x="500" y="360" width="60" height="30" class="or-gate" />
+  <text x="530" y="380" class="bold-text">OR</text>
+
+  <!-- Branch 2.2 connections -->
+  <path d="M 530 340 L 530 360" class="connector" />
+  <path d="M 530 390 L 480 390 L 480 410" class="connector" />
+  <path d="M 530 390 L 580 390 L 580 410" class="connector" />
+
+  <!-- Branch 2.2 methods -->
+  <rect x="430" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="480" y="440" class="small-text">Disconnect</text>
+  <text x="480" y="460" class="small-text">Power Source</text>
+
+  <rect x="530" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="580" y="440" class="small-text">Disable Network</text>
+  <text x="580" y="460" class="small-text">Equipment</text>
+
+  <!-- Branch 3: Physical Interference -->
+  <rect x="550" y="140" width="200" height="50" class="attack-node" />
+  <text x="650" y="160" class="bold-text">3. Physical Interference</text>
+  <text x="650" y="180" class="small-text">Tamper with device or sensors</text>
+
+  <!-- Branch 3 OR gate -->
+  <rect x="620" y="210" width="60" height="30" class="or-gate" />
+  <text x="650" y="230" class="bold-text">OR</text>
+
+  <!-- Branch 3 connections -->
+  <path d="M 650 190 L 650 210" class="connector" />
+  <path d="M 650 240 L 580 240 L 580 280" class="connector" />
+  <path d="M 650 240 L 650 280" class="connector" />
+  <path d="M 650 240 L 720 240 L 720 280" class="connector" />
+
+  <!-- Branch 3 methods -->
+  <rect x="530" y="280" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="580" y="310" class="small-text">3.1 Manipulate</text>
+  <text x="580" y="330" class="small-text">Sensor</text>
+  <text x="580" y="350" class="small-text">Placement</text>
+
+  <rect x="600" y="280" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="650" y="310" class="small-text">3.2 Terminate</text>
+  <text x="650" y="330" class="small-text">Recording /</text>
+  <text x="650" y="350" class="small-text">Disable Power</text>
+
+  <!-- Branch 3.3: Device Tampering -->
+  <rect x="670" y="280" width="100" height="60" class="attack-node" />
+  <text x="720" y="305" class="text">3.3 Device</text>
+  <text x="720" y="325" class="text">Tampering</text>
+
+  <!-- Branch 3.3 AND gate -->
+  <rect x="690" y="360" width="60" height="30" class="and-gate" />
+  <text x="720" y="380" class="bold-text">AND</text>
+
+  <!-- Branch 3.3 connections -->
+  <path d="M 720 340 L 720 360" class="connector" />
+  <path d="M 720 390 L 670 390 L 670 410" class="connector" />
+  <path d="M 720 390 L 770 390 L 770 410" class="connector" />
+
+  <!-- Branch 3.3 methods -->
+  <rect x="620" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="670" y="440" class="small-text">Swap Out</text>
+  <text x="670" y="460" class="small-text">Sensor Modules</text>
+
+  <rect x="720" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="770" y="440" class="small-text">Install Hardware</text>
+  <text x="770" y="460" class="small-text">Keylogger/Logic</text>
+
+  <!-- Branch 4: Gain Privileged Access -->
+  <rect x="700" y="140" width="300" height="50" class="attack-node" />
+  <text x="850" y="160" class="bold-text">4. Gain Privileged Access to System</text>
+  <text x="850" y="180" class="small-text">Control device or backend to execute attacks</text>
+
+  <!-- Branch 4 OR gate -->
+  <rect x="820" y="210" width="60" height="30" class="or-gate" />
+  <text x="850" y="230" class="bold-text">OR</text>
+
+  <!-- Branch 4 connections -->
+  <path d="M 850 190 L 850 210" class="connector" />
+  <path d="M 850 240 L 780 240 L 780 280" class="connector" />
+  <path d="M 850 240 L 920 240 L 920 280" class="connector" />
+
+  <!-- Branch 4.1: Compromise App -->
+  <rect x="730" y="280" width="100" height="60" class="attack-node" />
+  <text x="780" y="305" class="text">4.1 Compromise</text>
+  <text x="780" y="325" class="text">.NET Application</text>
+
+  <!-- Branch 4.1 AND gate -->
+  <rect x="750" y="360" width="60" height="30" class="and-gate" />
+  <text x="780" y="380" class="bold-text">AND</text>
+
+  <!-- Branch 4.1 connections -->
+  <path d="M 780 340 L 780 360" class="connector" />
+  <path d="M 780 390 L 730 390 L 730 410" class="connector" />
+  <path d="M 780 390 L 780 410" class="connector" />
+  <path d="M 780 390 L 830 390 L 830 410" class="connector" />
+
+  <!-- Branch 4.1 methods -->
+  <rect x="680" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="730" y="440" class="small-text">Exploit App</text>
+  <text x="730" y="460" class="small-text">Vulnerabilities</text>
+
+  <rect x="730" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="780" y="440" class="small-text">Brute Force</text>
+  <text x="780" y="460" class="small-text">Admin Password</text>
+
+  <rect x="780" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="830" y="440" class="small-text">Install</text>
+  <text x="830" y="460" class="small-text">Keylogger</text>
+
+  <!-- Branch 4.2: Compromise Cloud -->
+  <rect x="870" y="280" width="100" height="60" class="attack-node" />
+  <text x="920" y="305" class="text">4.2 Compromise</text>
+  <text x="920" y="325" class="text">Cloud Backend</text>
+
+  <!-- Branch 4.2 AND gate -->
+  <rect x="890" y="360" width="60" height="30" class="and-gate" />
+  <text x="920" y="380" class="bold-text">AND</text>
+
+  <!-- Branch 4.2 connections -->
+  <path d="M 920 340 L 920 360" class="connector" />
+  <path d="M 920 390 L 870 390 L 870 410" class="connector" />
+  <path d="M 920 390 L 920 410" class="connector" />
+  <path d="M 920 390 L 970 390 L 970 410" class="connector" />
+
+  <!-- Branch 4.2 methods -->
+  <rect x="820" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="870" y="440" class="small-text">Stolen Cloud</text>
+  <text x="870" y="460" class="small-text">Credentials</text>
+
+  <rect x="870" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="920" y="440" class="small-text">Privilege</text>
+  <text x="920" y="460" class="small-text">Escalation</text>
+
+  <rect x="920" y="410" width="100" height="60" rx="15" ry="15" class="method-node" />
+  <text x="970" y="440" class="small-text">API</text>
+  <text x="970" y="460" class="small-text">Exploits</text>
+
+  <!-- Attack Outcomes -->
+  <rect x="250" y="550" width="700" height="50" class="root-node" />
+  <text x="600" y="575" class="title-text">Potential Attack Outcomes</text>
+
+  <!-- Outcomes connection lines -->
+  <path d="M 600 600 L 600 630" class="connector" />
+  <path d="M 600 630 L 350 630 L 350 660" class="connector" />
+  <path d="M 600 630 L 600 660" class="connector" />
+  <path d="M 600 630 L 850 630 L 850 660" class="connector" />
+
+  <!-- Outcome boxes -->
+  <rect x="200" y="660" width="300" height="60" class="attack-node" />
+  <text x="350" y="685" class="bold-text">Delayed Intervention / Erroneous Treatment</text>
+  <text x="350" y="705" class="small-text">Modified data leads to incorrect medical decisions</text>
+
+  <rect x="450" y="660" width="300" height="60" class="attack-node" />
+  <text x="600" y="685" class="bold-text">Loss of Integrity and Availability</text>
+  <text x="600" y="705" class="small-text">System data becomes unreliable or inaccessible</text>
+
+  <rect x="700" y="660" width="300" height="60" class="attack-node" />
+  <text x="850" y="685" class="bold-text">Potential Damage to Patient Safety</text>
+  <text x="850" y="705" class="small-text">Incorrect monitoring affects health or treatment</text>
+
+  <!-- Legend -->
+  <rect x="1000" y="50" width="180" height="350" class="legend-box" />
+  <text x="1090" y="80" class="bold-text">Legend</text>
+
+  <rect x="1020" y="100" width="140" height="40" class="root-node" />
+  <text x="1090" y="125" class="text">Attack Goal</text>
+
+  <rect x="1020" y="150" width="140" height="40" class="attack-node" />
+  <text x="1090" y="175" class="text">Attack Vector</text>
+
+  <rect x="1020" y="200" width="140" height="40" rx="15" ry="15" class="method-node" />
+  <text x="1090" y="225" class="text">Attack Method</text>
+
+  <rect x="1050" y="250" width="60" height="30" class="and-gate" />
+  <text x="1080" y="270" class="bold-text">AND</text>
+  <text x="1090" y="300" class="small-text">All conditions required</text>
+
+  <rect x="1050" y="320" width="60" height="30" class="or-gate" />
+  <text x="1080" y="340" class="bold-text">OR</text>
+  <text x="1090" y="370" class="small-text">Any condition sufficient</text>
+</svg>

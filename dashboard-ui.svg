@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <!-- Styles -->
+  <style>
+    .background { fill: #F7FAFC; }
+    .navbar { fill: white; stroke: #E2E8F0; stroke-width: 1; }
+    .sidebar { fill: white; stroke: #E2E8F0; stroke-width: 1; }
+    .card { fill: white; stroke: #E2E8F0; stroke-width: 1; }
+    .card-header { fill: #F8FAFC; stroke: #E2E8F0; stroke-width: 1; }
+    .card-selected { fill: white; stroke: #3182CE; stroke-width: 2; }
+    .primary-button { fill: #3182CE; }
+    .warning-button { fill: #F6AD55; }
+    .danger-button { fill: #F56565; }
+    .active-nav { fill: #EBF8FF; stroke: #3182CE; stroke-width: 0 0 0 2px; }
+    .text-primary { font-family: 'Arial', sans-serif; fill: #2D3748; }
+    .text-secondary { font-family: 'Arial', sans-serif; fill: #718096; }
+    .text-small { font-size: 12px; }
+    .text-medium { font-size: 14px; }
+    .text-large { font-size: 18px; }
+    .text-xl { font-size: 24px; }
+    .brand-color-1 { fill: #3182CE; }
+    .brand-color-2 { fill: #4299E1; }
+    .brand-color-3 { fill: #63B3ED; }
+    .chart-grid { stroke: #E2E8F0; stroke-width: 1; }
+    .chart-line-1 { stroke: #3182CE; stroke-width: 2; fill: none; }
+    .chart-line-2 { stroke: #F6AD55; stroke-width: 2; fill: none; }
+    .chart-area-1 { fill: #3182CE; opacity: 0.1; }
+    .chart-area-2 { fill: #F6AD55; opacity: 0.1; }
+    .chart-bar-1 { fill: #3182CE; }
+    .chart-bar-2 { fill: #4299E1; }
+    .chart-bar-3 { fill: #63B3ED; }
+    .chart-bar-4 { fill: #90CDF4; }
+    .chart-dot { fill: white; stroke: #3182CE; stroke-width: 2; }
+    .level-low { fill: #48BB78; }
+    .level-medium { fill: #F6AD55; }
+    .level-high { fill: #F56565; }
+    .legend-item { font-family: 'Arial', sans-serif; font-size: 12px; fill: #4A5568; }
+    .avatar { fill: #CBD5E0; }
+    .modal-backdrop { fill: #1A202C; opacity: 0.5; }
+    .badge { fill: #3182CE; }
+    .badge-text { font-family: 'Arial', sans-serif; font-size: 11px; fill: white; }
+    .scroll-area { fill: #F7FAFC; }
+    .tab { fill: #EDF2F7; }
+    .tab-active { fill: white; stroke: #E2E8F0; stroke-width: 1 1 0 1; }
+    .tab-text { font-family: 'Arial', sans-serif; font-size: 14px; fill: #4A5568; }
+    .tab-text-active { font-family: 'Arial', sans-serif; font-size: 14px; fill: #2D3748; font-weight: bold; }
+    .tremor-scale-low { fill: #48BB78; }
+    .tremor-scale-medium { fill: #F6AD55; }
+    .tremor-scale-high { fill: #F56565; }
+    .button-text { font-family: 'Arial', sans-serif; font-size: 14px; fill: white; }
+  </style>
+
+  <!-- Main Background -->
+  <rect width="1920" height="1080" class="background" />
+  
+  <!-- Top Navigation Bar -->
+  <rect x="0" y="0" width="1920" height="60" class="navbar" />
+  <text x="70" y="38" class="text-primary text-large" font-weight="bold">NeuroSync</text>
+  <circle cx="1820" cy="30" r="20" class="avatar" />
+  <text x="1750" y="35" class="text-primary text-medium">Dr. Sarah Johnson</text>
+  
+  <!-- Left Sidebar -->
+  <rect x="0" y="60" width="240" height="1020" class="sidebar" />
+  <rect x="0" y="120" width="240" height="50" class="active-nav" />
+  
+  <!-- Navigation Items -->
+  <text x="50" y="100" class="text-secondary text-medium">MAIN NAVIGATION</text>
+  <text x="50" y="150" class="text-primary text-medium" font-weight="bold">Dashboard</text>
+  <text x="50" y="200" class="text-secondary text-medium">Patients</text>
+  <text x="50" y="250" class="text-secondary text-medium">Reports</text>
+  <text x="50" y="300" class="text-secondary text-medium">Analytics</text>
+  <text x="50" y="350" class="text-secondary text-medium">Notifications</text>
+  <text x="50" y="400" class="text-secondary text-medium">Settings</text>
+  
+  <!-- Patient Filter Section -->
+  <text x="50" y="450" class="text-secondary text-medium">PATIENTS</text>
+  <rect x="20" y="470" width="200" height="30" rx="15" ry="15" class="active-nav" />
+  <text x="50" y="490" class="text-primary text-medium" font-weight="bold">All Patients (24)</text>
+  <text x="50" y="530" class="text-secondary text-medium">Critical Status (3)</text>
+  <text x="50" y="570" class="text-secondary text-medium">Moderate Status (8)</text>
+  <text x="50" y="610" class="text-secondary text-medium">Stable Status (13)</text>
+  
+  <!-- Main Content Area -->
+  <rect x="260" y="80" width="1640" height="60" class="card" />
+  <text x="280" y="120" class="text-primary text-xl" font-weight="bold">Patient Monitoring Dashboard</text>
+  
+  <!-- Quick Stats Cards -->
+  <rect x="260" y="160" width="380" height="120" class="card" />
+  <text x="280" y="190" class="text-secondary text-medium">Total Patients</text>
+  <text x="280" y="230" class="text-primary text-xl" font-weight="bold">24</text>
+  <text x="340" y="230" class="text-secondary text-medium">+2 this week</text>
+  
+  <rect x="660" y="160" width="380" height="120" class="card" />
+  <text x="680" y="190" class="text-secondary text-medium">Critical Alerts</text>
+  <text x="680" y="230" class="text-primary text-xl" font-weight="bold">3</text>
+  <circle cx="730" cy="220" r="15" class="level-high" />
+  
+  <rect x="1060" y="160" width="380" height="120" class="card" />
+  <text x="1080" y="190" class="text-secondary text-medium">Average Tremor Score</text>
+  <text x="1080" y="230" class="text-primary text-xl" font-weight="bold">3.4</text>
+  <text x="1140" y="230" class="text-secondary text-medium">-0.8 from last week</text>
+  
+  <rect x="1460" y="160" width="440" height="120" class="card" />
+  <text x="1480" y="190" class="text-secondary text-medium">System Status</text>
+  <text x="1480" y="230" class="text-primary text-xl" font-weight="bold">All Systems Operational</text>
+  <circle cx="1700" cy="220" r="15" class="level-low" />
+  
+  <!-- Main Tremor Chart -->
+  <rect x="260" y="300" width="830" height="400" class="card" />
+  <rect x="260" y="300" width="830" height="50" class="card-header" />
+  <text x="280" y="330" class="text-primary text-medium" font-weight="bold">Real-time Tremor Monitoring</text>
+  
+  <!-- Chart Tab Navigation -->
+  <rect x="600" y="300" width="100" height="50" class="tab-active" />
+  <text x="650" y="330" text-anchor="middle" class="tab-text-active">Real-time</text>
+  
+  <rect x="700" y="300" width="100" height="50" class="tab" />
+  <text x="750" y="330" text-anchor="middle" class="tab-text">Hourly</text>
+  
+  <rect x="800" y="300" width="100" height="50" class="tab" />
+  <text x="850" y="330" text-anchor="middle" class="tab-text">Daily</text>
+  
+  <rect x="900" y="300" width="100" height="50" class="tab" />
+  <text x="950" y="330" text-anchor="middle" class="tab-text">Weekly</text>
+  
+  <!-- Chart Grid -->
+  <line x1="280" y1="650" x2="1070" y2="650" class="chart-grid" />
+  <line x1="280" y1="600" x2="1070" y2="600" class="chart-grid" />
+  <line x1="280" y1="550" x2="1070" y2="550" class="chart-grid" />
+  <line x1="280" y1="500" x2="1070" y2="500" class="chart-grid" />
+  <line x1="280" y1="450" x2="1070" y2="450" class="chart-grid" />
+  <line x1="280" y1="400" x2="1070" y2="400" class="chart-grid" />
+  
+  <!-- Y-axis Labels -->
+  <text x="270" y="655" text-anchor="end" class="text-secondary text-small">0</text>
+  <text x="270" y="605" text-anchor="end" class="text-secondary text-small">2</text>
+  <text x="270" y="555" text-anchor="end" class="text-secondary text-small">4</text>
+  <text x="270" y="505" text-anchor="end" class="text-secondary text-small">6</text>
+  <text x="270" y="455" text-anchor="end" class="text-secondary text-small">8</text>
+  <text x="270" y="405" text-anchor="end" class="text-secondary text-small">10</text>
+  
+  <!-- Tremor Scale Legend -->
+  <rect x="900" y="365" width="170" height="15" class="chart-area-1" />
+  <rect x="900" y="390" width="20" height="10" class="tremor-scale-low" />
+  <text x="930" y="400" class="legend-item">Low (0-3)</text>
+  <rect x="900" y="410" width="20" height="10" class="tremor-scale-medium" />
+  <text x="930" y="420" class="legend-item">Moderate (4-7)</text>
+  <rect x="900" y="430" width="20" height="10" class="tremor-scale-high" />
+  <text x="930" y="440" class="legend-item">Severe (8-10)</text>
+  
+  <!-- Chart Data - Left Hand -->
+  <path d="M 280 580 L 330 570 L 380 590 L 430 540 L 480 560 L 530 550 L 580 520 L 630 540 L 680 530 L 730 550 L 780 500 L 830 520 L 880 510 L 930 530 L 980 520 L 1030 540" class="chart-line-1" />
+  <path d="M 280 580 L 330 570 L 380 590 L 430 540 L 480 560 L 530 550 L 580 520 L 630 540 L 680 530 L 730 550 L 780 500 L 830 520 L 880 510 L 930 530 L 980 520 L 1030 540 L 1030 650 L 280 650 Z" class="chart-area-1" />
+  
+  <!-- Chart Data Points - with alert indicators -->
+  <circle cx="780" cy="500" r="6" class="chart-dot" />
+  <circle cx="780" cy="500" r="10" class="level-high" opacity="0.3" />
+  <circle cx="880" cy="510" r="6" class="chart-dot" />
+  <circle cx="930" cy="530" r="6" class="chart-dot" />
+  <circle cx="980" cy="520" r="6" class="chart-dot" />
+  <circle cx="1030" cy="540" r="6" class="chart-dot" />
+  
+  <!-- X-axis Time Labels -->
+  <text x="280" y="670" class="text-secondary text-small">13:30</text>
+  <text x="380" y="670" class="text-secondary text-small">13:35</text>
+  <text x="480" y="670" class="text-secondary text-small">13:40</text>
+  <text x="580" y="670" class="text-secondary text-small">13:45</text>
+  <text x="680" y="670" class="text-secondary text-small">13:50</text>
+  <text x="780" y="670" class="text-secondary text-small">13:55</text>
+  <text x="880" y="670" class="text-secondary text-small">14:00</text>
+  <text x="980" y="670" class="text-secondary text-small">14:05</text>
+  
+  <!-- Current Monitoring Patients List -->
+  <rect x="1110" y="300" width="790" height="400" class="card" />
+  <rect x="1110" y="300" width="790" height="50" class="card-header" />
+  <text x="1130" y="330" class="text-primary text-medium" font-weight="bold">Active Monitoring Sessions</text>
+  
+  <!-- Patient List Headers -->
+  <rect x="1110" y="350" width="790" height="40" fill="#F8FAFC" />
+  <text x="1130" y="375" class="text-secondary text-medium">Patient</text>
+  <text x="1400" y="375" class="text-secondary text-medium">Status</text>
+  <text x="1550" y="375" class="text-secondary text-medium">Last Reading</text>
+  <text x="1730" y="375" class="text-secondary text-medium">Actions</text>
+  
+  <!-- Patient List Items -->
+  <rect x="1110" y="390" width="790" height="60" class="card-selected" />
+  <circle cx="1150" cy="420" r="20" class="avatar" />
+  <text x="1180" y="415" class="text-primary text-medium" font-weight="bold">Robert Chen</text>
+  <text x="1180" y="435" class="text-secondary text-small">ID: PAT-4392</text>
+  <rect x="1400" y="410" width="80" height="20" rx="10" ry="10" class="level-high" />
+  <text x="1440" y="425" text-anchor="middle" class="badge-text">Critical</text>
+  <text x="1550" y="425" class="text-primary text-medium">14:05:32</text>
+  <rect x="1730" y="410" width="80" height="25" rx="4" ry="4" class="primary-button" />
+  <text x="1770" y="427" text-anchor="middle" class="button-text">View</text>
+  
+  <rect x="1110" y="450" width="790" height="60" fill="white" />
+  <circle cx="1150" cy="480" r="20" class="avatar" />
+  <text x="1180" y="475" class="text-primary text-medium" font-weight="bold">Maria Garcia</text>
+  <text x="1180" y="495" class="text-secondary text-small">ID: PAT-2187</text>
+  <rect x="1400" y="470" width="80" height="20" rx="10" ry="10" class="level-medium" />
+  <text x="1440" y="485" text-anchor="middle" class="badge-text">Moderate</text>
+  <text x="1550" y="485" class="text-primary text-medium">14:03:15</text>
+  <rect x="1730" y="470" width="80" height="25" rx="4" ry="4" class="primary-button" />
+  <text x="1770" y="487" text-anchor="middle" class="button-text">View</text>
+  
+  <rect x="1110" y="510" width="790" height="60" fill="white" />
+  <circle cx="1150" cy="540" r="20" class="avatar" />
+  <text x="1180" y="535" class="text-primary text-medium" font-weight="bold">James Wilson</text>
+  <text x="1180" y="555" class="text-secondary text-small">ID: PAT-8843</text>
+  <rect x="1400" y="530" width="80" height="20" rx="10" ry="10" class="level-high" />
+  <text x="1440" y="545" text-anchor="middle" class="badge-text">Critical</text>
+  <text x="1550" y="545" class="text-primary text-medium">14:01:47</text>
+  <rect x="1730" y="530" width="80" height="25" rx="4" ry="4" class="primary-button" />
+  <text x="1770" y="547" text-anchor="middle" class="button-text">View</text>
+  
+  <rect x="1110" y="570" width="790" height="60" fill="white" />
+  <circle cx="1150" cy="600" r="20" class="avatar" />
+  <text x="1180" y="595" class="text-primary text-medium" font-weight="bold">Emily Johnson</text>
+  <text x="1180" y="615" class="text-secondary text-small">ID: PAT-3321</text>
+  <rect x="1400" y="590" width="80" height="20" rx="10" ry="10" class="level-low" />
+  <text x="1440" y="605" text-anchor="middle" class="badge-text">Stable</text>
+  <text x="1550" y="605" class="text-primary text-medium">13:58:22</text>
+  <rect x="1730" y="590" width="80" height="25" rx="4" ry="4" class="primary-button" />
+  <text x="1770" y="607" text-anchor="middle" class="button-text">View</text>
+  
+  <rect x="1110" y="630" width="790" height="60" fill="white" />
+  <circle cx="1150" cy="660" r="20" class="avatar" />
+  <text x="1180" y="655" class="text-primary text-medium" font-weight="bold">David Park</text>
+  <text x="1180" y="675" class="text-secondary text-small">ID: PAT-6574</text>
+  <rect x="1400" y="650" width="80" height="20" rx="10" ry="10" class="level-medium" />
+  <text x="1440" y="665" text-anchor="middle" class="badge-text">Moderate</text>
+  <text x="1550" y="665" class="text-primary text-medium">13:55:50</text>
+  <rect x="1730" y="650" width="80" height="25" rx="4" ry="4" class="primary-button" />
+  <text x="1770" y="667" text-anchor="middle" class="button-text">View</text>
+  
+  <!-- Patient Detail Section -->
+  <rect x="260" y="720" width="830" height="330" class="card" />
+  <rect x="260" y="720" width="830" height="50" class="card-header" />
+  <text x="280" y="750" class="text-primary text-medium" font-weight="bold">Patient Details: Robert Chen</text>
+  
+  <!-- Patient Info -->
+  <text x="280" y="790" class="text-secondary text-medium">Age: 67</text>
+  <text x="380" y="790" class="text-secondary text-medium">Gender: Male</text>
+  <text x="520" y="790" class="text-secondary text-medium">Diagnosis: Parkinson's Disease (Stage 2)</text>
+  
+  <text x="280" y="820" class="text-secondary text-medium">Medication:</text>
+  <text x="360" y="820" class="text-primary text-medium">Levodopa 100mg (3x daily)</text>
+  <text x="620" y="820" class="text-primary text-medium">Pramipexole 0.5mg (2x daily)</text>
+  
+  <!-- Activity Metrics -->
+  <rect x="280" y="850" width="230" height="170" fill="#F8FAFC" rx="4" ry="4" />
+  <text x="300" y="880" class="text-primary text-medium" font-weight="bold">Tremor Score</text>
+  <text x="340" y="930" class="text-primary text-xl" font-weight="bold">8.2</text>
+  <rect x="300" y="950" width="190" height="10" rx="5" ry="5" fill="#EDF2F7" />
+  <rect x="300" y="950" width="156" height="10" rx="5" ry="5" class="level-high" />
+  <text x="300" y="980" class="text-secondary text-small">Trending: +1.4 from baseline</text>
+  <rect x="300" y="990" width="80" height="20" rx="10" ry="10" class="level-high" />
+  <text x="340" y="1005" text-anchor="middle" class="badge-text">Alert</text>
+  
+  <rect x="530" y="850" width="230" height="170" fill="#F8FAFC" rx="4" ry="4" />
+  <text x="550" y="880" class="text-primary text-medium" font-weight="bold">Activity Level</text>
+  <text x="590" y="930" class="text-primary text-xl" font-weight="bold">Medium</text>
+  <rect x="550" y="950" width="190" height="10" rx="5" ry="5" fill="#EDF2F7" />
+  <rect x="550" y="950" width="95" height="10" rx="5" ry="5" class="level-medium" />
+  <text x="550" y="980" class="text-secondary text-small">Steps today: 2,450</text>
+  
+  <rect x="780" y="850" width="230" height="170" fill="#F8FAFC" rx="4" ry="4" />
+  <text x="800" y="880" class="text-primary text-medium" font-weight="bold">Sleep Quality</text>
+  <text x="840" y="930" class="text-primary text-xl" font-weight="bold">72%</text>
+  <rect x="800" y="950" width="190" height="10" rx="5" ry="5" fill="#EDF2F7" />
+  <rect x="800" y="950" width="137" height="10" rx="5" ry="5" class="level-medium" />
+  <text x="800" y="980" class="text-secondary text-small">Hours last night: 6.3</text>
+  
+  <!-- Alert History & Notes -->
+  <rect x="1110" y="720" width="790" height="330" class="card" />
+  <rect x="1110" y="720" width="790" height="50" class="card-header" />
+  <text x="1130" y="750" class="text-primary text-medium" font-weight="bold">Alert History & Medical Notes</text>
+  
+  <!-- Alert History -->
+  <rect x="1130" y="780" width="350" height="250" class="scroll-area" rx="4" ry="4" />
+  <text x="1150" y="810" class="text-primary text-medium" font-weight="bold">Recent Alerts</text>
+  
+  <rect x="1150" y="830" width="310" height="60" fill="white" stroke="#F56565" stroke-width="1" rx="4" ry="4" />
+  <text x="1170" y="850" class="text-primary text-small" font-weight="bold">Critical Tremor Level</text>
+  <text x="1170" y="870" class="text-secondary text-small">14:05:32 - Left hand (8.2)</text>
+  <rect x="1370" y="845" width="70" height="20" rx="3" ry="3" class="level-high" />
+  <text x="1405" y="858" text-anchor="middle" class="badge-text">NEW</text>
+  
+  <rect x="1150" y="900" width="310" height="60" fill="white" stroke="#F56565" stroke-width="1" rx="4" ry="4" />
+  <text x="1170" y="920" class="text-primary text-small" font-weight="bold">Critical Tremor Level</text>
+  <text x="1170" y="940" class="text-secondary text-small">13:55:17 - Right hand (7.8)</text>
+  
+  <rect x="1150" y="970" width="310" height="60" fill="white" stroke="#F6AD55" stroke-width="1" rx="4" ry="4" />
+  <text x="1170" y="990" class="text-primary text-small" font-weight="bold">Medication Reminder</text>
+  <text x="1170" y="1010" class="text-secondary text-small">13:30:00 - Levodopa due</text>
+  
+  <!-- Medical Notes -->
+  <rect x="1500" y="780" width="380" height="250" class="scroll-area" rx="4" ry="4" />
+  <text x="1520" y="810" class="text-primary text-medium" font-weight="bold">Clinician Notes</text>
+  
+  <text x="1520" y="840" class="text-primary text-small" font-weight="bold">Dr. Sarah Johnson - Yesterday, 15:45</text>
+  <text x="1520" y="865" class="text-secondary text-small">Patient reported increased tremors in the morning. Medication adjusted slightly - increased Levodopa to 100mg 3x daily (from 2x). Monitoring effect over next 72 hours.</text>
+  
+  <line x1="1520" y1="890" x2="1860" y2="890" stroke="#E2E8F0" />
+  
+  <text x="1520" y="920" class="text-primary text-small" font-weight="bold">Dr. James Miller - 3 days ago</text>
+  <text x="1520" y="945" class="text-secondary text-small">Patient showing good response to therapy and medication regimen. Tremor activity has reduced by approximately 15% since last assessment. Continue current protocol.</text>
+  
+  <line x1="1520" y1="970" x2="1860" y2="970" stroke="#E2E8F0" />
+  
+  <text x="1520" y="1000" class="text-primary text-small" font-weight="bold">Dr. Sarah Johnson - 1 week ago</text>
+  <text x="1520" y="1025" class="text-secondary text-small">Initial assessment. Baseline measurements established. Patient fitted with monitoring glove and trained on proper usage. Follow-up scheduled in 1 week.</text>
+  
+  <!-- Alert Notification -->
+  <rect x="1770" y="15" width="30" height="30" rx="15" ry="15" fill="#F56565" />
+  <text x="1785" y="30" text-anchor="middle" class="badge-text" font-weight="bold">3</text>
+</svg> 

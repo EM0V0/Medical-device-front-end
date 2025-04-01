@@ -1,0 +1,198 @@
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffffff', 'primaryTextColor': '#000000', 'primaryBorderColor': '#000000', 'lineColor': '#000000', 'secondaryColor': '#ffffff', 'tertiaryColor': '#ffffff' }}}%%
+graph TD
+    %% Root Node - Top Event
+    MultiPatientHarm["Multi-Patient Harm"]
+    style MultiPatientHarm fill:white,stroke:#000000,color:black,stroke-width:2
+    
+    %% First Level OR gate
+    RootOR{{"OR"}}
+    style RootOR fill:white,stroke:#000000,color:black
+    
+    %% First Level Branches
+    DataTampering["System-Wide Data Tampering"]
+    style DataTampering fill:white,stroke:#000000,color:black,stroke-width:2
+    
+    MassDoS["Mass Denial of Service"]
+    style MassDoS fill:white,stroke:#000000,color:black,stroke-width:2
+    
+    BulkDataBreach["Bulk Data Breach"]
+    style BulkDataBreach fill:white,stroke:#000000,color:black,stroke-width:2
+    
+    FirmwareHijack["Hospital-Wide Firmware/Software Hijack"]
+    style FirmwareHijack fill:white,stroke:#000000,color:black,stroke-width:2
+    
+    %% Second Level Branch 1: System-Wide Data Tampering
+    DataTamperingOR{{"OR"}}
+    style DataTamperingOR fill:white,stroke:#000000,color:black
+    
+    CompromiseDatabase["Compromise Central Database"]
+    style CompromiseDatabase fill:white,stroke:#000000,color:black
+    
+    CloudMITM["Man-in-the-Middle on Cloud Traffic"]
+    style CloudMITM fill:white,stroke:#000000,color:black
+    
+    %% Third Level for Database Compromise
+    DatabaseAND{{"AND"}}
+    style DatabaseAND fill:white,stroke:#000000,color:black
+    
+    DBPrivileges["Attacker Gains Database\nAdmin Privileges"]
+    style DBPrivileges fill:white,stroke:#000000,color:black
+    
+    DBExploitOR{{"OR"}}
+    style DBExploitOR fill:white,stroke:#000000,color:black
+    
+    SQLInjection["SQL Injection"]
+    style SQLInjection fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    Misconfiguration["Misconfiguration"]
+    style Misconfiguration fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    StolenCredentials["Stolen Admin\nCredentials"]
+    style StolenCredentials fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    %% Third Level for Cloud MITM
+    CloudMITMOR{{"OR"}}
+    style CloudMITMOR fill:white,stroke:#000000,color:black
+    
+    ProtocolDowngrade["Protocol Downgrade"]
+    style ProtocolDowngrade fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    ARPDNSSpoof["ARP/DNS Spoofing"]
+    style ARPDNSSpoof fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    %% Second Level Branch 2: Mass Denial of Service
+    DoSOR{{"OR"}}
+    style DoSOR fill:white,stroke:#000000,color:black
+    
+    NetworkDDoS["DDoS Attack on Hospital\nNetwork Infrastructure"]
+    style NetworkDDoS fill:white,stroke:#000000,color:black
+    
+    APIOverload["Cloud Microservices\nAPI Overload"]
+    style APIOverload fill:white,stroke:#000000,color:black
+    
+    %% Second Level Branch 3: Bulk Data Breach
+    DataBreachOR{{"OR"}}
+    style DataBreachOR fill:white,stroke:#000000,color:black
+    
+    CloudConsole["Compromise Cloud\nAdmin Console"]
+    style CloudConsole fill:white,stroke:#000000,color:black
+    
+    LocalBackup["Local Storage/Backup Theft"]
+    style LocalBackup fill:white,stroke:#000000,color:black
+    
+    %% Cloud Console AND gate
+    CloudConsoleAND{{"AND"}}
+    style CloudConsoleAND fill:white,stroke:#000000,color:black
+    
+    SocialEngineering["Social Engineering\nAttack on IAM"]
+    style SocialEngineering fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    KeyLeakage["Access Key Leakage"]
+    style KeyLeakage fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    %% Local Backup OR gate
+    LocalBackupOR{{"OR"}}
+    style LocalBackupOR fill:white,stroke:#000000,color:black
+    
+    UnencryptedBackup["Unencrypted Backup\nExfiltration"]
+    style UnencryptedBackup fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    PhysicalTheft["Physical Disk Theft"]
+    style PhysicalTheft fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    %% Second Level Branch 4: Firmware/Software Hijack
+    FirmwareAND{{"AND"}}
+    style FirmwareAND fill:white,stroke:#000000,color:black
+    
+    UpdateServer["Firmware Update Server\nCompromise"]
+    style UpdateServer fill:white,stroke:#000000,color:black
+    
+    ITWorkstation["Hospital IT Workstation\nCompromise"]
+    style ITWorkstation fill:white,stroke:#000000,color:black
+    
+    %% IT Workstation OR gate
+    ITWorkstationOR{{"OR"}}
+    style ITWorkstationOR fill:white,stroke:#000000,color:black
+    
+    Phishing["Phishing Emails"]
+    style Phishing fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    Malware["Malware Installation"]
+    style Malware fill:white,stroke:#000000,color:black,rx:30,ry:30
+    
+    %% Outcomes (consequences)
+    OutcomesBox["Potential Outcomes"]
+    style OutcomesBox fill:white,stroke:#000000,color:black,stroke-width:2
+    
+    Misdiagnosis["Multiple Patient Misdiagnosis/\nDelayed Intervention"]
+    style Misdiagnosis fill:white,stroke:#000000,color:black
+    
+    PrivacyRisk["Severe Privacy and\nCompliance Violations"]
+    style PrivacyRisk fill:white,stroke:#000000,color:black
+    
+    ReputationLoss["Hospital Reputation and\nFinancial Damage"]
+    style ReputationLoss fill:white,stroke:#000000,color:black
+    
+    %% Connections
+    MultiPatientHarm --> RootOR
+    RootOR --> DataTampering
+    RootOR --> MassDoS
+    RootOR --> BulkDataBreach
+    RootOR --> FirmwareHijack
+    
+    %% Branch 1 connections
+    DataTampering --> DataTamperingOR
+    DataTamperingOR --> CompromiseDatabase
+    DataTamperingOR --> CloudMITM
+    
+    CompromiseDatabase --> DatabaseAND
+    DatabaseAND --> DBPrivileges
+    DatabaseAND --> DBExploitOR
+    DBExploitOR --> SQLInjection
+    DBExploitOR --> Misconfiguration
+    DBExploitOR --> StolenCredentials
+    
+    CloudMITM --> CloudMITMOR
+    CloudMITMOR --> ProtocolDowngrade
+    CloudMITMOR --> ARPDNSSpoof
+    
+    %% Branch 2 connections
+    MassDoS --> DoSOR
+    DoSOR --> NetworkDDoS
+    DoSOR --> APIOverload
+    
+    %% Branch 3 connections
+    BulkDataBreach --> DataBreachOR
+    DataBreachOR --> CloudConsole
+    DataBreachOR --> LocalBackup
+    
+    CloudConsole --> CloudConsoleAND
+    CloudConsoleAND --> SocialEngineering
+    CloudConsoleAND --> KeyLeakage
+    
+    LocalBackup --> LocalBackupOR
+    LocalBackupOR --> UnencryptedBackup
+    LocalBackupOR --> PhysicalTheft
+    
+    %% Branch 4 connections
+    FirmwareHijack --> FirmwareAND
+    FirmwareAND --> UpdateServer
+    FirmwareAND --> ITWorkstation
+    
+    ITWorkstation --> ITWorkstationOR
+    ITWorkstationOR --> Phishing
+    ITWorkstationOR --> Malware
+    
+    %% Outcome connections
+    DataTampering -.-> Misdiagnosis
+    MassDoS -.-> Misdiagnosis
+    BulkDataBreach -.-> PrivacyRisk
+    FirmwareHijack -.-> Misdiagnosis
+    FirmwareHijack -.-> PrivacyRisk
+    
+    BulkDataBreach -.-> ReputationLoss
+    MassDoS -.-> ReputationLoss
+    
+    Misdiagnosis --> OutcomesBox
+    PrivacyRisk --> OutcomesBox
+    ReputationLoss --> OutcomesBox

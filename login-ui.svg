@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <!-- Styles -->
+  <style>
+    .background { fill: #F7F9FC; }
+    .login-container { fill: white; stroke: #E2E8F0; stroke-width: 1; }
+    .primary-button { fill: #3182CE; }
+    .secondary-button { fill: #EDF2F7; stroke: #CBD5E0; stroke-width: 1; }
+    .input-field { fill: #F7FAFC; stroke: #E2E8F0; stroke-width: 1; }
+    .input-field-focus { fill: #F7FAFC; stroke: #3182CE; stroke-width: 1.5; }
+    .label-text { font-family: 'Arial', sans-serif; font-size: 14px; fill: #4A5568; }
+    .title-text { font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold; fill: #2D3748; }
+    .subtitle-text { font-family: 'Arial', sans-serif; font-size: 16px; fill: #718096; }
+    .button-text { font-family: 'Arial', sans-serif; font-size: 16px; fill: white; font-weight: bold; }
+    .secondary-button-text { font-family: 'Arial', sans-serif; font-size: 16px; fill: #4A5568; }
+    .footer-text { font-family: 'Arial', sans-serif; font-size: 12px; fill: #A0AEC0; }
+    .brand-color-1 { fill: #3182CE; }
+    .brand-color-2 { fill: #4299E1; }
+    .brand-color-3 { fill: #63B3ED; }
+    .brand-stroke { stroke: #3182CE; stroke-width: 2; fill: none; }
+    .helper-text { font-family: 'Arial', sans-serif; font-size: 12px; fill: #718096; }
+    .icon-color { fill: #4A5568; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1600" height="900" class="background" />
+  
+  <!-- Left panel - Branding and illustration -->
+  <rect x="0" y="0" width="700" height="900" fill="#EBF8FF" />
+  
+  <!-- Medical monitoring illustration -->
+  <circle cx="350" cy="450" r="200" fill="#BEE3F8" opacity="0.6" />
+  
+  <!-- Stylized brain/neural network visualization -->
+  <path d="M 250 350 C 280 320, 320 310, 350 320 C 380 330, 410 320, 440 350 C 470 380, 460 420, 430 450 C 400 480, 410 520, 380 550 C 350 580, 310 570, 280 540 C 250 510, 230 480, 240 450 C 250 420, 220 380, 250 350 Z" class="brand-stroke" />
+  <path d="M 330 380 L 380 420 L 330 460 L 280 420 Z" class="brand-stroke" />
+  <circle cx="330" cy="380" r="8" class="brand-color-1" />
+  <circle cx="380" cy="420" r="8" class="brand-color-2" />
+  <circle cx="330" cy="460" r="8" class="brand-color-3" />
+  <circle cx="280" cy="420" r="8" class="brand-color-2" />
+  <circle cx="300" cy="350" r="5" class="brand-color-3" />
+  <circle cx="400" cy="380" r="5" class="brand-color-3" />
+  <circle cx="410" cy="470" r="5" class="brand-color-1" />
+  <circle cx="360" cy="500" r="5" class="brand-color-2" />
+  <circle cx="280" cy="470" r="5" class="brand-color-1" />
+  <path d="M 300 350 L 330 380" class="brand-stroke" />
+  <path d="M 400 380 L 380 420" class="brand-stroke" />
+  <path d="M 410 470 L 380 420" class="brand-stroke" />
+  <path d="M 360 500 L 330 460" class="brand-stroke" />
+  <path d="M 280 470 L 280 420" class="brand-stroke" />
+  
+  <!-- Branding -->
+  <text x="350" y="180" text-anchor="middle" class="title-text" fill="#2C5282">NeuroSync</text>
+  <text x="350" y="210" text-anchor="middle" class="subtitle-text" fill="#2C5282">Parkinson's Monitoring System</text>
+  
+  <!-- Marketing text -->
+  <text x="350" y="660" text-anchor="middle" class="subtitle-text" fill="#2C5282">Advanced tremor monitoring and analysis</text>
+  <text x="350" y="690" text-anchor="middle" class="subtitle-text" fill="#2C5282">Real-time data visualization and alerts</text>
+  <text x="350" y="720" text-anchor="middle" class="subtitle-text" fill="#2C5282">Secure, HIPAA-compliant cloud storage</text>
+  
+  <!-- Login container -->
+  <rect x="850" y="200" width="500" height="500" rx="10" ry="10" class="login-container" />
+  
+  <!-- Login form -->
+  <text x="1100" y="270" text-anchor="middle" class="title-text">Welcome Back</text>
+  <text x="1100" y="300" text-anchor="middle" class="subtitle-text">Sign in to your account</text>
+  
+  <!-- Email field -->
+  <text x="900" y="350" class="label-text">Email</text>
+  <rect x="900" y="360" width="400" height="50" rx="4" ry="4" class="input-field" />
+  <text x="920" y="392" class="subtitle-text">doctor@hospital.org</text>
+  
+  <!-- Password field -->
+  <text x="900" y="440" class="label-text">Password</text>
+  <rect x="900" y="450" width="400" height="50" rx="4" ry="4" class="input-field-focus" />
+  <text x="920" y="482" class="subtitle-text">••••••••</text>
+  
+  <!-- Forgot password link -->
+  <text x="1230" y="510" text-anchor="end" class="helper-text" fill="#3182CE">Forgot password?</text>
+  
+  <!-- Remember me checkbox -->
+  <rect x="900" y="530" width="20" height="20" rx="4" ry="4" class="input-field" />
+  <text x="930" y="545" class="helper-text">Remember me for 30 days</text>
+  
+  <!-- Sign in button -->
+  <rect x="900" y="570" width="400" height="50" rx="4" ry="4" class="primary-button" />
+  <text x="1100" y="600" text-anchor="middle" class="button-text">Sign in</text>
+  
+  <!-- Role selector pills -->
+  <rect x="900" y="640" width="126" height="30" rx="15" ry="15" class="primary-button" />
+  <text x="963" y="660" text-anchor="middle" class="button-text">Doctor</text>
+  
+  <rect x="1036" y="640" width="126" height="30" rx="15" ry="15" class="secondary-button" />
+  <text x="1100" y="660" text-anchor="middle" class="secondary-button-text">Admin</text>
+  
+  <rect x="1173" y="640" width="126" height="30" rx="15" ry="15" class="secondary-button" />
+  <text x="1236" y="660" text-anchor="middle" class="secondary-button-text">Family</text>
+  
+  <!-- Footer -->
+  <text x="1100" y="750" text-anchor="middle" class="footer-text">© 2023 NeuroSync. All rights reserved.</text>
+  <text x="1100" y="770" text-anchor="middle" class="footer-text">Privacy Policy • Terms of Service • Support</text>
+</svg> 
