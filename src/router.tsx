@@ -11,6 +11,10 @@ import MainLayout from './layouts/MainLayout';
 import Login from './pages/auth/Login';
 // Dashboard
 const Dashboard = React.lazy(() => import('./pages/dashboard/Dashboard'));
+// Lazy load patients, reports and settings pages
+const PatientsPage = React.lazy(() => import('./pages/patients/PatientsPage'));
+const ReportsPage = React.lazy(() => import('./pages/reports/ReportsPage'));
+const SettingsPage = React.lazy(() => import('./pages/settings/SettingsPage'));
 
 // Auth guard for protected routes
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -72,6 +76,84 @@ const AppRouter = () => {
           <MainLayout>
             <React.Suspense fallback={<div>Loading...</div>}>
               <Dashboard />
+            </React.Suspense>
+          </MainLayout>
+        </ProtectedRoute>
+      ),
+    },
+    // Patient management page route
+    {
+      path: 'patients',
+      element: (
+        <ProtectedRoute>
+          <MainLayout>
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <PatientsPage />
+            </React.Suspense>
+          </MainLayout>
+        </ProtectedRoute>
+      ),
+    },
+    // Patient detail page route
+    {
+      path: 'patients/:patientId',
+      element: (
+        <ProtectedRoute>
+          <MainLayout>
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <PatientsPage />
+            </React.Suspense>
+          </MainLayout>
+        </ProtectedRoute>
+      ),
+    },
+    // Patient edit page route
+    {
+      path: 'patients/:patientId/edit',
+      element: (
+        <ProtectedRoute>
+          <MainLayout>
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <PatientsPage />
+            </React.Suspense>
+          </MainLayout>
+        </ProtectedRoute>
+      ),
+    },
+    // Reports page route
+    {
+      path: 'reports',
+      element: (
+        <ProtectedRoute>
+          <MainLayout>
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <ReportsPage />
+            </React.Suspense>
+          </MainLayout>
+        </ProtectedRoute>
+      ),
+    },
+    // Report detail page route
+    {
+      path: 'reports/:reportId',
+      element: (
+        <ProtectedRoute>
+          <MainLayout>
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <ReportsPage />
+            </React.Suspense>
+          </MainLayout>
+        </ProtectedRoute>
+      ),
+    },
+    // Settings page route
+    {
+      path: 'settings',
+      element: (
+        <ProtectedRoute>
+          <MainLayout>
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <SettingsPage />
             </React.Suspense>
           </MainLayout>
         </ProtectedRoute>

@@ -277,7 +277,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         
         {/* Footer */}
         <footer className="py-4 px-6 text-center border-t border-blue-100">
-          <p className="text-xs text-gray-500">© 2023 NeuroSync. All rights reserved.</p>
+          <p className="text-xs text-gray-500">© 2025Darkside. All rights reserved.</p>
         </footer>
       </div>
     </div>

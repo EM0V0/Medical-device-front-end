@@ -7,7 +7,7 @@ export interface Patient {
   name: string;
   status: PatientStatus;
   lastReading: string;
-  isSelected?: boolean;
+  isSelected: boolean;
 }
 
 interface PatientRowProps {
@@ -21,46 +21,82 @@ interface PatientRowProps {
  * Displays a single patient record in a list format with status indicators
  */
 const PatientRow: React.FC<PatientRowProps> = ({ patient, onViewPatient }) => {
-  const getStatusColor = (status: PatientStatus): string => {
+  const getStatusStyles = (status: PatientStatus) => {
     switch (status) {
-      case 'critical': return 'bg-red-500';
-      case 'moderate': return 'bg-orange-400';
-      case 'stable': return 'bg-green-500';
-      default: return 'bg-gray-400';
+      case 'critical':
+        return {
+          dot: 'bg-red-500',
+          text: 'text-red-500',
+          bgHover: 'hover:bg-red-50',
+          label: 'Critical'
+        };
+      case 'moderate':
+        return {
+          dot: 'bg-orange-400',
+          text: 'text-orange-400',
+          bgHover: 'hover:bg-orange-50',
+          label: 'Moderate'
+        };
+      case 'stable':
+        return {
+          dot: 'bg-green-500',
+          text: 'text-green-500',
+          bgHover: 'hover:bg-green-50',
+          label: 'Stable'
+        };
+      default:
+        return {
+          dot: 'bg-gray-400',
+          text: 'text-gray-400',
+          bgHover: 'hover:bg-gray-50',
+          label: 'Unknown'
+        };
     }
   };
-
-  const getStatusText = (status: PatientStatus): string => {
-    switch (status) {
-      case 'critical': return 'Critical';
-      case 'moderate': return 'Moderate';
-      case 'stable': return 'Stable';
-      default: return 'Unknown';
-    }
-  };
-
+  
+  const statusStyles = getStatusStyles(patient.status);
+  
   return (
-    <div className={`flex items-center p-4 ${patient.isSelected ? 'bg-blue-50 border-2 border-blue-500 rounded-lg' : 'hover:bg-gray-50 border-b border-gray-200'}`}>
-      <div className="w-10 h-10 rounded-full bg-gray-300 flex-shrink-0 flex items-center justify-center">
-        <span className="text-gray-600 font-medium">{patient.name.charAt(0)}</span>
-      </div>
-      <div className="ml-4 flex-grow">
-        <p className="text-gray-800 font-medium">{patient.name}</p>
-        <p className="text-gray-500 text-sm">ID: {patient.id}</p>
-      </div>
-      <div className="flex-shrink-0 mr-6">
-        <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-white ${getStatusColor(patient.status)}`}>
-          {getStatusText(patient.status)}
-        </span>
-      </div>
-      <div className="w-24 text-gray-800 text-right">{patient.lastReading}</div>
-      <div className="w-24 ml-6 text-right">
-        <button 
-          className="bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium px-4 py-1.5 rounded transition-colors duration-150"
-          onClick={() => onViewPatient(patient.id)}
-        >
-          View
-        </button>
+    <div 
+      className={`p-4 transition-colors duration-150 ${patient.isSelected ? 'bg-blue-50' : 'bg-white'} ${statusStyles.bgHover} cursor-pointer`}
+      onClick={() => onViewPatient(patient.id)}
+    >
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex items-center mb-2 md:mb-0">
+          <div className="flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 font-semibold">
+              {patient.name.charAt(0)}
+            </div>
+          </div>
+          
+          <div className="ml-3">
+            <p className="text-sm font-medium text-gray-900">{patient.name}</p>
+            <p className="text-xs text-gray-500">{patient.id}</p>
+          </div>
+        </div>
+        
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center">
+            <div className={`${statusStyles.dot} h-2.5 w-2.5 rounded-full mr-2`}></div>
+            <span className={`${statusStyles.text} text-sm font-medium`}>{statusStyles.label}</span>
+          </div>
+          
+          <div className="text-sm text-gray-500">
+            Last reading: <span className="font-medium">{patient.lastReading}</span>
+          </div>
+          
+          <div className="hidden md:flex">
+            <button 
+              className="bg-blue-500 hover:bg-blue-600 text-white text-xs px-3 py-1 rounded transition-colors duration-150"
+              onClick={(e) => {
+                e.stopPropagation();
+                onViewPatient(patient.id);
+              }}
+            >
+              View
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

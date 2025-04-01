@@ -16,6 +16,8 @@ const Login: React.FC = () => {
   const [selectedRole, setSelectedRole] = useState<Role>('doctor');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [activeInput, setActiveInput] = useState<string | null>(null);
   
   // Animation state
@@ -24,12 +26,42 @@ const Login: React.FC = () => {
   // Set animation ready state after component mount
   useEffect(() => {
     setTimeout(() => setIsReady(true), 100);
+    
+    // Force HTML document language to English
+    document.documentElement.lang = 'en';
+    
+    // Override browser validation message
+    const forms = document.getElementsByTagName('form');
+    for (let i = 0; i < forms.length; i++) {
+      forms[i].setAttribute('novalidate', 'novalidate');
+    }
   }, []);
   
-  // Handle form submission
+  // Handle form submission with custom validation
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setEmailError('');
+    setPasswordError('');
+    
+    // Validate form fields
+    let isValid = true;
+    
+    if (!email.trim()) {
+      setEmailError('Please enter your email address');
+      isValid = false;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+      setEmailError('Please enter a valid email address');
+      isValid = false;
+    }
+    
+    if (!password.trim()) {
+      setPasswordError('Please enter your password');
+      isValid = false;
+    }
+    
+    if (!isValid) return;
+    
     setIsLoading(true);
     
     try {
@@ -48,6 +80,17 @@ const Login: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+  
+  // Handle input change with error clearing
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    if (emailError) setEmailError('');
+  };
+  
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+    if (passwordError) setPasswordError('');
   };
   
   // Brain Network Illustration with animation
@@ -207,7 +250,7 @@ const Login: React.FC = () => {
             </div>
           )}
           
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" noValidate>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
               <div className={`relative rounded-md shadow-sm transition duration-150 ${activeInput === 'email' ? 'ring-2 ring-blue-300' : ''}`}>
@@ -221,14 +264,16 @@ const Login: React.FC = () => {
                   id="email"
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleEmailChange}
                   onFocus={() => setActiveInput('email')}
                   onBlur={() => setActiveInput(null)}
-                  className="w-full py-3 pl-10 pr-3 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 transition duration-150"
+                  className={`w-full py-3 pl-10 pr-3 border ${emailError ? 'border-red-300' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 transition duration-150`}
                   placeholder="doctor@hospital.org"
-                  required
                 />
               </div>
+              {emailError && (
+                <p className="mt-1 text-sm text-red-600">{emailError}</p>
+              )}
             </div>
             
             <div>
@@ -243,14 +288,16 @@ const Login: React.FC = () => {
                   id="password"
                   type="password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={handlePasswordChange}
                   onFocus={() => setActiveInput('password')}
                   onBlur={() => setActiveInput(null)}
-                  className="w-full py-3 pl-10 pr-3 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 transition duration-150"
+                  className={`w-full py-3 pl-10 pr-3 border ${passwordError ? 'border-red-300' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 transition duration-150`}
                   placeholder="••••••••"
-                  required
                 />
               </div>
+              {passwordError && (
+                <p className="mt-1 text-sm text-red-600">{passwordError}</p>
+              )}
             </div>
             
             <div className="flex items-center justify-between">
@@ -305,7 +352,7 @@ const Login: React.FC = () => {
           </form>
           
           <div className="mt-10 pt-6 border-t border-gray-200 text-center">
-            <p className="text-xs text-gray-500">© 2023 NeuroSync. All rights reserved.</p>
+            <p className="text-xs text-gray-500">© 2025 Darkside. All rights reserved.</p>
             <p className="text-xs text-gray-500 mt-1">Privacy Policy • Terms of Service • Support</p>
           </div>
         </div>
