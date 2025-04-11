@@ -305,4 +305,4 @@ Accounts for development and testing:
 
 ## 13. Contact Information
 
-For any questions, please contact the frontend team: frontend@neurosync.example.com 
+For any questions, please contact the frontend team: zsun54@jh.edu
