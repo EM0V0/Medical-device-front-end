@@ -1,6 +1,11 @@
 # NeuroSync - Parkinson's Monitoring System
 
 A modern web application for monitoring and analyzing tremor data from patients with Parkinson's disease. This system provides real-time data visualization, alerts, and patient management features to help medical professionals track patient symptoms and treatment effectiveness.
+![image](https://github.com/user-attachments/assets/7f05f759-8d4d-4acd-9739-2aabf930d494)
+![image](https://github.com/user-attachments/assets/3fe4ea71-efc6-4ba5-bb78-d727d8396316)
+![image](https://github.com/user-attachments/assets/e938ca20-79e5-49ea-8c67-76d2e56ced36)
+![image](https://github.com/user-attachments/assets/fbfc5995-615a-4f63-8358-e9feef656eda)
+![image](https://github.com/user-attachments/assets/440eb322-04f1-4fab-949c-613f55c8ebcd)
 
 ## Features
 
